@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact BrandRise Digital | Start Your Growth</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add specific styles for the contact page layout */
+        .contact-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 5%;
+        }
+        .contact-form-container, .contact-info-container {
+            flex: 1;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .contact-form-container {
+            background-color: var(--light-bg);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        .contact-info-container h3 {
+            color: var(--brand-blue);
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--brand-accent);
+            padding-bottom: 5px;
+        }
+        .info-item {
+            margin-bottom: 25px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+        }
+        .info-item strong {
+            margin-right: 15px;
+            color: var(--brand-accent);
+            font-size: 1.5em; /* Icon size */
+        }
+        .contact-info-container a[href^="mailto:"] {
+            color: var(--brand-blue);
+            text-decoration: none;
+        }
+        .contact-info-container a[href^="mailto:"]:hover {
+            color: var(--brand-accent);
+            text-decoration: underline;
+        }
+        .map-embed-wrap {
+            margin-top: 30px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        /* Reusing form styles from the footer */
+        .contact-form-container input[type="text"], 
+        .contact-form-container input[type="email"],
+        .contact-form-container input[type="tel"],
+        .contact-form-container select,
+        .contact-form-container textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+        
+        /* Form row for side-by-side inputs */
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        .form-row input {
+            flex: 1;
+        }
+        
+        @media (max-width: 900px) {
+            .contact-content {
+                flex-direction: column;
+            }
+            .form-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="service-hero">
+        <div class="container">
+            <h1>Ready to <span class="highlight-text">Start Your Growth Journey?</span></h1>
+            <p class="subhead">Tell us about your project, and a strategy expert will reach out within 24 hours.</p>
+            <a href="./gallery.html" class="work-gallery-btn">
+    Work Gallery
+</a>
+
+        </div>
+ 
+    <div class="contact-content">
+        <div class="contact-form-container">
+            <h3>Request Your Free Consultation</h3>
+            <form action="https://formspree.io/f/xdkjnrko" method="POST">
+                
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Your Full Name" required>
+                    <input type="email" name="email" placeholder="Business Email" required>
+                </div>
+
+                <div class="form-row">
+                    <input type="tel" name="phone" placeholder="Phone Number (Optional)">
+                    <input type="text" name="company" placeholder="Company Name" required>
+                </div>
+                
+                <select name="service-interest" required>
+                    <option value="">I'm interested in...</option>
+                    <option value="SEO">Search Engine Optimization (SEO)</option>
+                    <option value="SMM">Social Media Marketing (SMM)</option>
+                    <option value="PaidAds">Facebook Ads & Paid Media</option>
+                    <option value="B2B">B2B Lead Generation</option>
+                    <option value="Consulting">Marketing Consulting</option>
+                    <option value="Other">Other Digital Services</option>
+                </select>
+
+                <textarea name="message" placeholder="Briefly describe your project goals or challenges..." rows="5" required></textarea>
+                
+                <button type="submit" class="primary-cta">Send My Request</button>
+            </form>
+        </div>
+
+        <div class="contact-info-container">
+            <h3>Get in Touch Directly</h3>
+            
+            <div class="info-item">
+                <strong>📧</strong> 
+                <div>
+                    <p><strong>Email Us:</strong></p>
+                    <p><a href="mailto:brandrisedigitall@gmail.com">brandrisedigitall@gmail.com</a></p>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <strong>📞</strong> 
+                <div>
+                    <p><strong>Call Us:</strong></p>
+                    <p>+91 6202073057 (Mon - Fri, 10 AM - 6 PM IST)</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <strong>📍</strong> 
+                <div>
+                    <p><strong>Our Office:</strong></p>
+                    <p>BrandRise Digital HQ</p>
+                    <p>Raghunath pur, Business Hub, Motihari/Bihar, 845401</p>
+                </div>
+            </div>
+            
+            <div class="map-embed-wrap">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.789!2d84.9167!3d26.6492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39932bcf7c22552f%3A0x3e9b827130e7f4b!2sMotihari%2C%20Bihar%2C%20India!5e0!3m2!1sen!2sin!4v1699000000000!5m2!1sen!2sin"
+                    width="100%"
+                    height="200"
+                    style="border:0; border-radius: 5px;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="BrandRise Digital – Motihari, Bihar">
+                </iframe>
+            </div>
+        </div>
+    </div>
+    
+    </body>
+</html>

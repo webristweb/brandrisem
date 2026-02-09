@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrandRise Digital | Elevate Your Digital Success</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4gkz4E9ZyQ5GJ9kM9d2Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+       <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+        
+        // Function to trigger translation
+        function translateLanguage(lang) {
+            var teCombo;
+            var sel = document.getElementsByTagName('select');
+            for (var i = 0; i < sel.length; i++) {
+                if (sel[i].className.indexOf('goog-te-combo') !== -1) {
+                    teCombo = sel[i];
+                    break;
+                }
+            }
+            
+            if (teCombo) {
+                teCombo.value = lang;
+                teCombo.dispatchEvent(new Event('change'));
+            } else {
+                // If not found, try again after a short delay
+                setTimeout(function() {
+                    translateLanguage(lang);
+                }, 500);
+            }
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <a href="./index.html">
+                <img src="./BRD_LOGO.png" alt="BrandRise Digital Logo" class="brand-logo">
+            </a>
+        </div>
+        <nav class="desktop-nav">
+            <a href="#home" class="smooth-scroll">HOME</a>
+            <a href="#services">SERVICES</a>
+            <a href="#case-studies">CASE STUDIES</a>
+           <a href="#" onclick="openModal('about-modal'); return false;">ABOUT</a>
+            <a href="./contact.html" class="cta-button">History or gallery</a>
+            
+            <!-- Language Selector -->
+            <div class="language-selector">
+                <button class="lang-btn" id="langBtn">
+                    <span class="lang-icon">🌐</span>
+                    <span class="lang-current">English</span>
+                    <span class="lang-arrow">▼</span>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="javascript:void(0)" class="lang-option active" data-lang="en" onclick="changeToLanguage('en')">English</a>
+                    <a href="javascript:void(0)" class="lang-option" data-lang="hi" onclick="changeToLanguage('hi')">हिंदी (Hindi)</a>
+                </div>
+            </div>
+        </nav>
+        <button class="menu-toggle">☰</button>
+        
+        <!-- Hidden Google Translate Element -->
+        <div id="google_translate_element"></div>
+    </header>
+
+    <script>
+        // Global function to change language with page reload
+        function changeToLanguage(lang) {
+            // Update button text
+            const langCurrent = document.querySelector('.lang-current');
+            const langOptions = document.querySelectorAll('.lang-option');
+            
+            langOptions.forEach(opt => {
+                opt.classList.remove('active');
+                if (opt.getAttribute('data-lang') === lang) {
+                    opt.classList.add('active');
+                    langCurrent.textContent = opt.textContent;
+                }
+            });
+            
+            // Close dropdown
+            document.getElementById('langDropdown').classList.remove('show');
+            document.getElementById('langBtn').classList.remove('active');
+            
+            // Set cookie and reload page
+            if (lang === 'en') {
+                // Delete cookie to go back to English
+                document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + window.location.hostname;
+                window.location.reload();
+            } else {
+                // Set cookie for Hindi
+                document.cookie = 'googtrans=/en/' + lang + '; path=/';
+                document.cookie = 'googtrans=/en/' + lang + '; path=/; domain=' + window.location.hostname;
+                window.location.reload();
+            }
+        }
+    </script>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Elevate Your Brand. <strong>Rise</strong> Above the Noise.</h1>
+            <p class="hero-tagline">Digital Strategies That Drive Real Growth.</p>
+            <p class="hero-intro">We are BrandRise Digital, your partner in data-driven SEO, powerful SMM, and conversion-focused Email Marketing.</p>
+            <a href="#contact" class="primary-cta smooth-scroll">Request a Free Strategy Session</a>
+            <p class="trust-bar">Trusted by ambitious startups and scaling mid-market businesses.</p>
+        </div>
+    </section>
+
+    <section id="services" class="services-section scroll-reveal">
+        <h2>Our Comprehensive Digital Services</h2>
+        <p class="section-subtitle">Fueling your brand's growth across all critical digital channels.</p>
+        
+        <div class="services-grid">
+            <a href="./seo.html" class="service-card">
+                <h3>🔍 Search Engine Optimization (SEO)</h3>
+                <p>Increase your organic visibility and drive high-intent traffic by ranking higher on Google and other search engines.</p>
+            </a>
+            <a href="./instagram-handling.html" class="service-card">
+                <h3>📸 Instagram Page Handling</h3>
+                <p>Complete management of your Instagram presence, focusing on audience engagement, brand consistency, and community growth.</p>
+            </a>
+            <a href="./smm.html" class="service-card">
+                <h3>🖼️ Social Media Post Designing</h3>
+                <p>Create scroll-stopping, professional visual content optimized for every platform to enhance your brand's look and message.</p>
+            </a>
+            <a href="./editing.html" class="service-card">
+                <h3>🎥 Reels Editing</h3>
+                <p>Capture attention quickly with high-quality, trending short-form video content designed to maximize reach and viral potential.</p>
+            </a>
+            <a href="./paid-ads.html" class="service-card">
+                <h3>📢 Facebook Ads</h3>
+                <p>Launch highly targeted, conversion-focused ad campaigns on Facebook and Instagram to drive immediate leads and sales.</p>
+            </a>
+            <a href="./email-marketing.html" class="service-card">
+                <h3>📧 Email Marketing</h3>
+                <p>Build loyalty and revenue with automated email sequences, newsletters, and personalized campaigns that nurture your leads.</p>
+            </a>
+            <a href="./b2b-marketing.html" class="service-card">
+                <h3>🤝 B2B Marketing</h3>
+                <p>Strategic marketing solutions designed specifically to generate high-value business leads and accelerate complex sales cycles.</p>
+            </a>
+            <a href="./consulting.html" class="service-card">
+                <h3>⚙️ Marketing Consulting</h3>
+                <p>Get expert strategy and tailored advice to solve your toughest marketing challenges and plan your next phase of growth.</p>
+            </a>
+
+             <a href="./real estate.html" class="service-card">
+                <h3>⚙️ Real  Estate</h3>
+                <p>Get expert strategy and tailored advice to solve your toughest marketing challenges and plan your next phase of growth.</p>
+            </a>
+            
+        </div>
+
+        
+        
+        <a href="#contact" class="secondary-cta smooth-scroll">Start Your Project Today &rarr;</a>
+    </section>
+
+    <section id="case-studies" class="case-study-preview scroll-reveal">
+        <h2>Results That Speak For Themselves</h2>
+        <p class="section-subtitle">A glimpse into the growth we drive for our partners.</p>
+        
+        <div class="case-study-summary">
+            <h3>Case Study: Fusion Fitness (Regional Gym Chain)</h3>
+            <p>Fusion Fitness was struggling to convert high ad spend into actual sign-ups. Their brand lacked consistency online, costing them trust and conversions.</p>
+            
+            <div class="results-grid">
+                <div class="metric-box">
+                    <p class="result-number">+210%</p>
+                    <p class="result-label">Organic Leads</p>
+                </div>
+                <div class="metric-box">
+                    <p class="result-number">-35%</p>
+                    <p class="result-label">Cost Per Lead (CPL)</p>
+                </div>
+                <div class="metric-box">
+                    <p class="result-number">78%</p>
+                    <p class="result-label">Higher Engagement</p>
+                </div>
+            </div>
+            
+            <span class="client-name">— Strategy combined SEO, SMM, and Paid Ads.</span>
+        </div>
+        
+        <a href="./case-studies.html" class="primary-cta">View More Success Stories</a>
+    </section>
+    
+    <footer id="contact" class="scroll-reveal">
+        <div class="footer-content">
+            <div class="contact-form-area">
+                <h3>Ready to Start Your Rise?</h3>
+                <form action="https://formspree.io/f/xdkjnrko" method="POST">
+
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Business Email" required>
+                    <textarea name="message" placeholder="Tell us about your project..." required></textarea>
+                    <button type="submit" class="primary-cta">Get a Proposal</button>
+                </form>
+            </div>
+            <div class="footer-info">
+
+                <h2 class="footer-brand">
+    <span class="brand">Brand</span>
+    <span class="rise">Rise</span>
+    <span class="digital">Digital</span>
+</h2>
+
+                <p>Trusted by ambitious startups and scaling mid-market businesses.</p>
+            
+                <div class="footer-two-col">
+            
+                    <!-- LEFT : QUICK LINKS -->
+                    <div class="footer-col">
+                        <h3>Quick Links</h3>
+                        <a href="#home">🏠 Home</a>
+                        <a href="#" onclick="openModal('about-modal'); return false;">ℹ️ About Us</a>
+                        <a href="./contact.html">📩 Contact Us</a>
+                    </div>
+            
+                    <!-- RIGHT : CONTACT INFO -->
+                    <div class="footer-col">
+                        <h3>Contact Info</h3>
+                    
+                        <a href="tel:+919241590861" class="contact-link">📞 +91 9241590861</a>
+                        <a href="tel:+916200825019" class="contact-link">📞 +91 6200825019</a>
+                    
+                        <a href="mailto:brandrisedigitall@gmail.com" class="contact-link">
+                            ✉️ brandrisedigitall@gmail.com
+                        </a>
+                    
+                        <a href="https://www.google.com/maps/search/?api=1&query=Delhi+India"
+                           target="_blank"
+                           class="contact-link">
+                            📍 Delhi, India
+                        </a>
+                    </div>
+                    
+                </div>
+            
+                <p class="footer-copy">© 2025 BrandRise Digital. All rights reserved.</p>
+            </div>    
+        </div>
+
+        <div class="footer-social">
+    <a href="https://www.facebook.com/YOUR_PROFILE" target="_blank" class="facebook" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.instagram.com/brandrisedigitall?igsh=MXRldXJkaHl0NThvYQ==" target="_blank" class="instagram" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="https://twitter.com/YOUR_PROFILE" target="_blank" class="twitter" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/in/YOUR_PROFILE" target="_blank" class="linkedin" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+
+    <a href="https://WA.me/6202073057" target="_blank" class="whatsapp" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i> 
+    </a>
+</div>
+
+
+ <div class="footer-credit">
+    <span>Designed by</span>
+    <strong>
+
+        <a href="saurabh.html">
+        <span class="name saurabh">Saurabh</span>
+        </a>
+
+        <a href="abhishek.html">
+        <span class="dot">•</span>
+        <span class="name abhishek">Abhishek</span>
+        </a>
+
+
+        <span class="dot">•</span>
+        <span class="name vivek">Vivek</span>
+    </strong>
+</div>
+
+        
+    </footer>
+<div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal('about-modal');">&times;</span>
+            
+            <div class="modal-body">
+                <h2>Our Story: Why BrandRise Digital?</h2>
+                
+                <div class="about-section">
+                    <h3>1. Our Mission: Beyond Clicks</h3>
+                    <p>At <strong>BrandRise Digital</strong>, our mission is simple: to transform ambitious businesses into market leaders through intelligent, data-led digital marketing. We saw a need for an agency that truly connects strategy with tangible business outcomes. We cut through the digital noise to deliver solutions that don't just look good, but perform exceptionally.</p>
+                </div>
+                
+                <div class="about-section">
+                    <h3>2. Our Approach: Strategy First</h3>
+                    <p>Our process is built on clarity and precision:</p>
+                    <ul>
+                        <li><strong>Audit & Define:</strong> We begin by deeply understanding your business, your market, and your competitors.</li>
+                        <li><strong>Custom Strategy:</strong> We craft a holistic plan using your full suite of services (SEO, Social, Email) tailored specifically to your conversion goals.</li>
+                        <li><strong>Execute & Optimize:</strong> We deploy campaigns with precision, constantly monitoring performance and optimizing based on real-time data to ensure maximum ROI.</li>
+                    </ul>
+                </div>
+                
+                <div class="about-section">
+                    <h3>3. Our People: Your Growth Team</h3>
+                    <p>BrandRise Digital is powered by a dedicated team of specialists in content, search, paid media, and B2B strategy. We are committed to transparency, communicating results clearly, and celebrating every milestone achieved together. When you choose BrandRise, you gain a dedicated partner committed to seeing your brand rise to the top.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</html>

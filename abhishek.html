@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhishek Raj | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0f172a,#1e293b);
+color:#e5e7eb;
+}
+
+/* HERO */
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+
+
+.hero h1{
+font-size:46px;
+color:#22c55e;
+}
+
+.hero p{
+font-size:18px;
+margin-top:8px;
+max-width:650px;
+}
+
+.btn{
+margin-top:25px;
+padding:12px 30px;
+border:none;
+background:#22c55e;
+color:#022c22;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+.btn:hover{background:#16a34a;}
+
+/* NAV */
+nav{
+position:sticky;
+top:0;
+background:rgba(15,23,42,0.85);
+backdrop-filter:blur(12px);
+padding:12px;
+text-align:center;
+z-index:100;
+}
+
+nav a{
+color:#e5e7eb;
+margin:0 12px;
+text-decoration:none;
+font-weight:500;
+}
+nav a:hover{color:#22c55e;}
+
+/* SECTION */
+section{
+max-width:1100px;
+margin:50px auto;
+padding:25px;
+}
+
+.section-title{
+font-size:28px;
+margin-bottom:20px;
+border-left:5px solid #22c55e;
+padding-left:15px;
+}
+
+/* CARD */
+.card{
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(14px);
+border-radius:16px;
+padding:25px;
+margin-bottom:20px;
+transition:0.3s;
+}
+.card:hover{transform:translateY(-6px);}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+/* SKILLS */
+.skill{
+display:inline-block;
+margin:6px;
+padding:8px 18px;
+border-radius:25px;
+background:#22c55e;
+color:#022c22;
+font-size:14px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:#020617;
+margin-top:50px;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+.hero h1{font-size:34px;}
+.section-title{font-size:24px;}
+}
+
+.social-links{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 25px;
+}
+
+.social{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Individual colors */
+.whatsapp{ background: #25D366; }
+.instagram{ background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
+.linkedin{ background: #0a66c2; }
+.github{ background: #111827; }
+
+/* Hover effect */
+.social:hover{
+    transform: translateY(-6px) scale(1.08);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+}
+
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+<h1>Abhishek Raj</h1>
+<p>Frontend Web Developer | Computer Applications Graduate  
+Focused on clean UI, strong fundamentals & remote-ready skills</p>
+<button class="btn" onclick="scrollToSection('about')">Explore More</button>
+</div>
+
+<!-- NAV -->
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#education">Education</a>
+<a href="#personal">Personal</a>
+</nav>
+
+<!-- ABOUT -->
+<section id="about">
+<h2 class="section-title">Summary</h2>
+<div class="card">
+Motivated and dedicated graduate seeking a remote work opportunity. Equipped with
+strong communication skills, personal laptop, and readiness to contribute to a reputed MNC.
+Adaptable and eager to deliver quality results in a remote work environment.
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2 class="section-title">Technical & Soft Skills</h2>
+<div class="card">
+<span class="skill">HTML</span>
+<span class="skill">CSS</span>
+<span class="skill">JavaScript</span>
+<span class="skill">MySQL</span>
+<span class="skill">GitHub</span>
+<span class="skill">VS Code</span>
+<span class="skill">OOP</span>
+<span class="skill">DBMS</span>
+<span class="skill">OS Basics</span>
+<span class="skill">Data Structures</span>
+<span class="skill">Problem Solving</span>
+<span class="skill">Teamwork</span>
+<span class="skill">Communication</span>
+<span class="skill">Time Management</span>
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+<h2 class="section-title">Education</h2>
+<div class="card">
+<ul>
+<li><b>BCA (Graduate)</b> – L.N.D College Motihari (2025) | 78.8%</li>
+<li><b>12th (I.Sc)</b> – Govt. High School, Gaiyghat, East Champaran (2022)</li>
+<li><b>10th</b> – A Vidyapith Laxmipur S Saraiya, E Champaran (2020)</li>
+</ul>
+</div>
+</section>
+
+<!-- PERSONAL -->
+<section id="personal">
+<h2 class="section-title">Personal Details</h2>
+<div class="card">
+<ul>
+<li>Location: Champaran, Bihar, India</li>
+<li>Phone: +91 9241590861</li>
+<li>Email: abhishekraj5508@gmail.com</li>
+<li>Languages: Hindi (Fluent), English (Intermediate)</li>
+</ul>
+</div>
+</section>
+
+<footer>
+
+<div class="social-links">
+    <a href="https://wa.me/919241590861" target="_blank" class="social whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="https://www.instagram.com/" target="_blank" class="social instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/" target="_blank" class="social linkedin">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+
+    <a href="https://github.com/" target="_blank" class="social github">
+        <i class="fab fa-github"></i>
+    </a>
+</div>
+
+
+© 2026 | Designed & Developed by Abhishek Raj
+</footer>
+
+<script>
+function scrollToSection(id){
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>

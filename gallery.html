@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Work Gallery | BrandRise Digital</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:Poppins, Arial, sans-serif;
+    background:#0b132b;
+    color:#fff;
+}
+
+/* HEADER */
+.gallery-header{
+    padding:30px 6%;
+    text-align:center;
+}
+.gallery-header h1{
+    font-size:2.5rem;
+    color:#ffb703;
+}
+.gallery-header p{
+    color:#ccc;
+}
+
+/* FILTER BUTTONS */
+.filters{
+    text-align:center;
+    margin:30px 0;
+}
+.filters button{
+    padding:10px 22px;
+    margin:8px;
+    border-radius:30px;
+    border:2px solid #ffb703;
+    background:transparent;
+    color:#ffb703;
+    cursor:pointer;
+}
+.filters button.active,
+.filters button:hover{
+    background:#ffb703;
+    color:#000;
+}
+
+/* GALLERY GRID */
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    padding:0 6% 80px;
+}
+
+.gallery-item{
+    position:relative;
+    border-radius:15px;
+    overflow:hidden;
+    cursor:pointer;
+    background:#000;
+}
+
+.gallery-item img,
+.gallery-item video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.play{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:50px;
+    color:#fff;
+}
+
+.tag{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background:#ffb703;
+    color:#000;
+    padding:4px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+/* MODAL */
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.9);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+}
+.modal.active{
+    display:flex;
+}
+.modal-content img,
+.modal-content video{
+    max-width:90%;
+    max-height:90%;
+}
+.close{
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:40px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="gallery-header">
+    <h1>Our Work Gallery</h1>
+    <p>Images • Videos • Reels • Campaign Highlights</p>
+</div>
+
+<!-- FILTERS -->
+<div class="filters">
+    <button class="active" data-type="all">All</button>
+    <button data-type="image">Images</button>
+    <button data-type="video">Videos</button>
+    <button data-type="short">Shorts</button>
+</div>
+
+<!-- GALLERY -->
+<div class="gallery-grid">
+
+    <!-- IMAGE -->
+    <div class="gallery-item image">
+        <img src="images/work1.jpg">
+    </div>
+
+    <!-- VIDEO -->
+    <div class="gallery-item video">
+        <video src="videos/work-video.mp4" muted></video>
+        <div class="play">▶</div>
+    </div>
+
+    <!-- SHORT -->
+    <div class="gallery-item short">
+        <video src="videos/reel1.mp4" muted loop></video>
+        <span class="tag">SHORT</span>
+    </div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+    <span class="close">&times;</span>
+    <div class="modal-content"></div>
+</div>
+
+<script>
+const buttons=document.querySelectorAll(".filters button");
+const items=document.querySelectorAll(".gallery-item");
+const modal=document.getElementById("modal");
+const modalContent=document.querySelector(".modal-content");
+const close=document.querySelector(".close");
+
+buttons.forEach(btn=>{
+    btn.onclick=()=>{
+        document.querySelector(".filters .active").classList.remove("active");
+        btn.classList.add("active");
+        const type=btn.dataset.type;
+        items.forEach(item=>{
+            item.style.display=
+            type==="all"||item.classList.contains(type)
+            ?"block":"none";
+        });
+    };
+});
+
+items.forEach(item=>{
+    item.onclick=()=>{
+        modal.classList.add("active");
+        modalContent.innerHTML=item.innerHTML;
+        const v=modalContent.querySelector("video");
+        if(v){v.controls=true;v.play();}
+    };
+});
+
+close.onclick=()=>{
+    modal.classList.remove("active");
+    modalContent.innerHTML="";
+};
+</script>
+
+</body>
+</html>
